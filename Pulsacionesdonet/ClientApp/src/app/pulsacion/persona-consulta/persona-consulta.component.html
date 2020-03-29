@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-6">
+      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+    </div>
+  </div>
+  <hr>
+  
+  <table class="table table-striped" *ngIf='personas && personas.length'>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">identificación</th>
+        <th scope="col">Nombres </th>
+        <th scope="col">Apellidos </th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Pulsacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas; index as i ">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ persona.Identificacion}} </td>
+        <td>{{ persona.Nombres }}</td>
+        <td>{{ persona.Apellidos }}</td>
+        <td>{{persona.Sexo  }}</td>
+        <td>{{ persona.Edad  }}</td>
+        <td>{{ persona.Pulsacion  }}</td>
+      </tr>
+    </tbody>
+  </table>
